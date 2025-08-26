@@ -380,3 +380,10 @@ input:checked + .slider:before { transform: translateX(22px); }
         width: 250px;
     }
 }
+.content-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 2rem 0;
+    box-shadow: 0 8px 30px var(--shadow-color);
+}
