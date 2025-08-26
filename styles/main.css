@@ -43,14 +43,12 @@ body {
     overflow-x: hidden;
 }
 
-/* --- NEW: Animated Gradient Background --- */
+/* --- Animated Gradient Background --- */
 body::before {
     content: '';
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background: linear-gradient(-45deg, var(--primary-color), var(--accent-color), #23a6d5, #23d5ab);
     background-size: 400% 400%;
     z-index: -1;
@@ -77,8 +75,7 @@ body::before {
 /* --- Header & Navigation --- */
 .main-header {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     width: 100%;
     z-index: 100;
 }
@@ -109,7 +106,7 @@ body::before {
     color: var(--text-color);
 }
 
-/* --- NEW: Animated Menu Button (Hamburger to X) --- */
+/* --- Animated Menu Button (Hamburger to X) --- */
 .menu-btn {
     background: none;
     border: none;
@@ -143,7 +140,7 @@ body::before {
 }
 
 
-/* --- NEW: Glassmorphism Menu Drawer --- */
+/* --- Glassmorphism Menu Drawer --- */
 .drawer-overlay {
     position: fixed;
     top: 0; left: 0;
@@ -175,7 +172,20 @@ body::before {
 .menu-drawer.open {
     right: 0;
 }
-.close-btn { display: none; } /* No longer needed */
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 300;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    line-height: 1;
+}
+
 .menu-drawer ul {
     list-style: none; flex-grow: 1;
 }
@@ -301,7 +311,6 @@ input:checked + .slider:before { transform: translateX(22px); }
 [data-theme="dark"] .small-font {
     color: #adb5bd;
 }
-/* --- NEW: Glassmorphism Contact Box --- */
 .contact-box {
     border: 1px solid rgba(255, 255, 255, 0.2);
     background-color: var(--drawer-bg);
@@ -365,8 +374,8 @@ input:checked + .slider:before { transform: translateX(22px); }
     border-radius: 12px;
     margin: 2rem 0;
     box-shadow: 0 8px 30px var(--shadow-color);
-    transition: transform 0.3s ease; /* For parallax */
 }
+/* --- Responsive Adjustments --- */
 @media (max-width: 600px) {
     .container {
         padding: 0 1rem;
@@ -381,6 +390,6 @@ input:checked + .slider:before { transform: translateX(22px); }
         font-size: 1.3rem;
     }
     .menu-drawer {
-        width: 100%;
+        width: 280px; /* No longer full-width */
     }
 }
