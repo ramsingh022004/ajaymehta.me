@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Menu Drawer Functionality ---
     const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-btn');
     const menuDrawer = document.getElementById('menu-drawer');
     const drawerOverlay = document.getElementById('drawer-overlay');
-    // Note: The close button inside the drawer is no longer needed with the new design
 
     const openDrawer = () => {
         menuDrawer.classList.add('open');
@@ -19,16 +19,21 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     menuBtn.addEventListener('click', () => {
-        const isDrawerOpen = menuDrawer.classList.contains('open');
-        if (isDrawerOpen) {
+        // This single button now toggles the menu
+        if (menuDrawer.classList.contains('open')) {
             closeDrawer();
         } else {
             openDrawer();
         }
     });
+
+    // The explicit close button inside the drawer
+    closeBtn.addEventListener('click', closeDrawer);
     
+    // The overlay for closing the menu
     drawerOverlay.addEventListener('click', closeDrawer);
     
+    // Close drawer with the Escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && menuDrawer.classList.contains('open')) {
             closeDrawer();
@@ -106,19 +111,4 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // --- NEW: Parallax Effect on Images ---
-    const parallaxImages = document.querySelectorAll('.parallax-image');
-
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset;
-        parallaxImages.forEach(image => {
-            // Check if the image is in the viewport to save performance
-            const rect = image.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom >= 0) {
-                const speed = 0.2; // Adjust this value for more or less parallax effect
-                const yPos = (scrollTop - image.offsetTop) * speed;
-                image.style.transform = `translateY(${yPos}px)`;
-            }
-        });
-    });
 });
