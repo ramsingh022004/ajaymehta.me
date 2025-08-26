@@ -3,14 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Blog</title>
+    <title>ajaymehta.me - Blog Articles</title>
     <link rel="stylesheet" href="/styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome to My Blog</h1>
-    <p>Check out my first post!</p>
-    <ul>
-        <li><a href="/posts/my-first-post.html">My First Post</a></li>
-    </ul>
+    <header class="navbar">
+        <div class="container navbar-content">
+            <div class="logo">
+                <img src="https://ajaymehta.me/images/logo.png" alt="Logo"> <span>ajaymehta.me</span>
+            </div>
+            <nav class="nav-links" id="navLinks">
+                <a href="/" class="active">Home</a>
+                <a href="/best-of.html">Best Of</a>
+                <a href="/growth-memo.html">Growth Memo</a>
+                <a href="/about.html">About</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="icon-button"><img src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png" alt="Search"></button>
+                <button class="icon-button desktop-only">Sign In</button>
+                <button class="subscribe-button">Subscribe</button>
+            </div>
+            <button class="hamburger-menu" id="hamburgerMenu">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="hero-section">
+            <h1>Blog articles</h1>
+            <p>Blog articles about SEO, Tech, leadership, and Growth.</p>
+        </section>
+
+        <section class="article-grid">
+            <article class="blog-card featured-card">
+                <img src="https://ajaymehta.me/images/featured-image-1.jpg" alt="Featured Article Image" class="card-image">
+                <div class="card-content">
+                    <span class="category">Blog articles</span>
+                    <h2>5 principles of an ideal SEO team structure</h2>
+                    <p>There is a method to (re)structuring an SEO team. In this article, I explain the 5 guiding principles to...</p>
+                    <span class="read-time">Oct 18, 2021 · 4 min read</span>
+                </div>
+            </article>
+
+            <article class="blog-card featured-card">
+                <img src="https://ajaymehta.me/images/featured-image-2.jpg" alt="Featured Article Image" class="card-image">
+                <div class="card-content">
+                    <span class="category">Blog articles</span>
+                    <h2>My Growth predictions for 2021</h2>
+                    <p>In this post, I review my predictions for 2020 and set new ones for 2021.</p>
+                    <span class="read-time">Jan 4, 2021 · 10 min read</span>
+                </div>
+            </article>
+
+            <article class="blog-card side-card">
+                <div class="card-content">
+                    <span class="category">SERP features</span>
+                    <h2>The impact of image SERP Features on traffic</h2>
+                    <p>Image Boxes and Image Thumbnails are two of the most shown SERP Features. One of them drains a...</p>
+                    <span class="read-time">Nov 10, 2020 · 4 min read</span>
+                </div>
+            </article>
+
+            </section>
+        
+        <section class="ad-block">
+            <div class="ad-content">
+                <p class="ad-brand">Shop Target for Strollers you will love at great low prices. Choose from contactless Same Day Delivery, Drive Up and more.</p>
+                <div class="ad-footer">
+                    <span>Lightweight</span>
+                    <span>Best Baby</span>
+                    <img src="https://ajaymehta.me/images/stroller.png" alt="Stroller Ad"> </div>
+            </div>
+        </section>
+
+        <section class="misc-blocks">
+            <div class="graph-block">
+                <p>Graph Placeholder</p>
+            </div>
+            <div class="circles-block">
+                <p>Circles Placeholder</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 ajaymehta.me. All rights reserved.</p>
+            <button class="subscribe-fixed-button" id="fixedSubscribe">
+                <img src="https://img.icons8.com/ios-filled/24/ffffff/email-send.png" alt="Subscribe Icon">
+                Subscribe
+            </button>
+        </div>
+    </footer>
+
+    <script src="/scripts/main.js"></script>
 </body>
 </html>
