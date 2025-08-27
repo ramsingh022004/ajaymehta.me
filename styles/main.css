@@ -108,18 +108,23 @@ body {
 .site-name {
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: _1.5rem;
     color: var(--heading-color);
     transition: color 0.3s;
 }
 
 /* --- CORRECTED RULE for pages with dark backgrounds --- */
-.header-on-dark .site-name,
-.header-on-dark .logo {
-    color: #ffffff; /* Forces the text and icon to be white */
+/* When the header is on a dark page AND has NOT been scrolled */
+.header-on-dark:not(.header-scrolled) .site-name,
+.header-on-dark:not(.header-scrolled) .logo,
+.header-on-dark:not(.header-scrolled) .line {
+    color: #ffffff;
+    background-color: #ffffff;
 }
-.header-on-dark .line {
-    background-color: #ffffff; /* Forces the menu lines to be white */
+/* For dark mode, ensure the text color is always correct */
+[data-theme="dark"] .header-on-dark .site-name,
+[data-theme="dark"] .header-on-dark .logo {
+    color: #ffffff;
 }
 
 
