@@ -8,25 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hindiBtn && englishBtn && hindiStory && englishStory) {
 
         hindiBtn.addEventListener('click', () => {
-            // Show Hindi content
             hindiStory.classList.add('active');
             englishStory.classList.remove('active');
-            
-            // Set active button style
             hindiBtn.classList.add('active');
             englishBtn.classList.remove('active');
         });
 
         englishBtn.addEventListener('click', () => {
-            // Show English content
             englishStory.classList.add('active');
             hindiStory.classList.remove('active');
-
-            // Set active button style
             englishBtn.classList.add('active');
             hindiBtn.classList.remove('active');
         });
-
     }
 
     // --- Intersection Observer for Fade-in Animations ---
