@@ -8,11 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', () => {
             const scrollTop = window.pageYOffset;
             
-            // Base image moves slowly
             const baseSpeed = 0.1;
             baseImage.style.transform = `translateY(${scrollTop * baseSpeed}px) scale(1.1)`;
 
-            // Overlay image moves faster, creating depth
             const overlaySpeed = 0.3;
             overlayImage.style.transform = `translateY(${scrollTop * overlaySpeed}px)`;
         });
