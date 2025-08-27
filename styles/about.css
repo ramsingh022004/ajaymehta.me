@@ -1,97 +1,53 @@
 /* --- Styles specifically for the About Me page --- */
 
-/* Override body background for a more intimate feel */
-.about-page-body {
-    background: #e9e2d9;
-    color: #4a4a4a;
-}
-
-[data-theme="dark"] .about-page-body {
-    background: #1c1c1c;
-    color: #c5c5c5;
-}
-
-.about-main-content {
-    min-height: 100vh;
-}
-
-/* --- Split Screen Layout --- */
-.split-layout {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.split-image-side, .split-text-side {
-    width: 100%;
-}
-
-.split-image-side {
-    height: 50vh;
-    min-height: 300px;
-    position: relative;
-    overflow: hidden;
-}
-
-.split-image-side .image-wrapper {
-    width: 100%;
-    height: 100%;
-}
-
-.split-image-side img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transform: scale(1.05); /* Start slightly zoomed in */
-    transition: transform 5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.split-image-side:hover img {
-    transform: scale(1); /* Zoom out slowly on hover */
-}
-
-.split-text-side {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 3rem 1.5rem;
+/* Give the header a solid background to prevent overlap */
+.main-header {
     background-color: var(--bg-color);
+    box-shadow: 0 2px 10px var(--shadow-color);
 }
 
-[data-theme="dark"] .split-text-side {
-    background: #222222;
+/* Main container for the About page content */
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 8rem 1.5rem 4rem; /* Add padding-top to account for fixed header */
 }
 
-
-.text-content-wrapper {
-    max-width: 500px;
-    text-align: left;
+.about-hero {
+    text-align: center;
+    margin-bottom: 4rem;
 }
 
 .about-title {
     font-family: var(--font-heading);
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
-    position: relative;
-    display: inline-block;
+    margin-bottom: 2rem;
     color: var(--text-color);
 }
 
-.about-title::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 50%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+.image-wrapper {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.story-section {
+    margin-bottom: 4rem;
+    text-align: center;
 }
 
 .language-toggle {
     margin-bottom: 2rem;
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 0.5rem;
 }
@@ -112,7 +68,6 @@
     color: #757575;
 }
 
-
 .language-toggle button.active {
     color: var(--primary-color);
 }
@@ -121,19 +76,24 @@
     color: #bdbdbd;
 }
 
-
 .story-content {
     position: relative;
+    min-height: 200px; /* Reserve space to prevent layout shift */
 }
 
 .story-text {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1.9;
     font-family: var(--font-body);
     font-style: italic;
+    max-width: 650px;
+    margin: 0 auto;
     opacity: 0;
     visibility: hidden;
     position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
     transition: opacity 0.5s, visibility 0.5s;
 }
 
@@ -143,10 +103,26 @@
     position: relative;
 }
 
+.image-section {
+    margin-bottom: 4rem;
+}
+
+.contact-section {
+    text-align: center;
+}
+
 .contact-card {
-    margin-top: 3rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border-color);
+    display: inline-block;
+    border: 1px solid var(--border-color);
+    background-color: var(--highlight-bg);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px var(--shadow-color);
 }
 
 .contact-card .name {
@@ -154,6 +130,8 @@
     font-weight: 600;
     font-size: 1.1rem;
     color: var(--text-color);
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
 .contact-card .email {
@@ -162,7 +140,7 @@
     font-weight: 500;
 }
 
-/* Shared active page link style (can be in main.css or here) */
+/* Shared active page link style */
 .menu-drawer a.active-page {
     color: var(--primary-color);
     font-weight: 700;
@@ -171,32 +149,28 @@
 /* Staggered reveal animations for this page */
 .reveal-on-scroll {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 .reveal-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);
 }
-.reveal-on-scroll:nth-child(2) { transition-delay: 0.2s; }
-.reveal-on-scroll:nth-child(3) { transition-delay: 0.4s; }
-.reveal-on-scroll:nth-child(4) { transition-delay: 0.6s; }
 
+/* Add delays for a nice cascading effect */
+.story-section.reveal-on-scroll { transition-delay: 0.2s; }
+.image-section.reveal-on-scroll { transition-delay: 0.2s; }
+.contact-section.reveal-on-scroll { transition-delay: 0.2s; }
 
-/* --- Desktop Layout --- */
-@media (min-width: 769px) {
-    .split-layout {
-        flex-direction: row;
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .about-container {
+        padding-top: 6rem;
     }
-
-    .split-image-side {
-        width: 45%;
-        height: 100vh;
-        position: sticky;
-        top: 0;
+    .about-title {
+        font-size: 2.5rem;
     }
-
-    .split-text-side {
-        width: 55%;
+    .story-text {
+        font-size: 1.1rem;
     }
 }
