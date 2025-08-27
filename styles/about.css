@@ -26,8 +26,11 @@
     color: var(--text-color);
 }
 
+/* --- NEW: Constrain image width and center it --- */
 .image-wrapper {
     width: 100%;
+    max-width: 650px; /* Make images the same max-width as the text */
+    margin: 0 auto; /* Center the image container */
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 10px 30px var(--shadow-color);
