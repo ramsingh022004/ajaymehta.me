@@ -1,5 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- NEW: Header Scroll Effect ---
+    const header = document.querySelector('.main-header');
+    if (header) {
+        const scrollThreshold = 20; // How many pixels to scroll before header becomes solid
+
+        const handleHeaderScroll = () => {
+            if (window.scrollY > scrollThreshold) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        };
+        
+        window.addEventListener('scroll', handleHeaderScroll);
+        // Run on page load as well in case the page is reloaded halfway down
+        handleHeaderScroll(); 
+    }
+
     // --- Menu Drawer Functionality ---
     const menuBtn = document.getElementById('menu-btn');
     const closeBtn = document.getElementById('close-btn');
@@ -35,17 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Dark Mode Toggle Functionality (UPDATED) ---
+    // --- Dark Mode Toggle Functionality ---
     const darkModeSwitch = document.getElementById('dark-mode-switch');
     
-    // Check only for a previously saved theme in localStorage
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme) {
         document.documentElement.setAttribute('data-theme', currentTheme);
         if (currentTheme === 'dark') {
             darkModeSwitch.checked = true;
         }
-    } // The "else if" block that checks system preference has been removed.
+    }
 
     darkModeSwitch.addEventListener('change', function(e) {
         if (e.target.checked) {
@@ -105,10 +122,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Parallax Effect for Background Pattern ---
     const backgroundPattern = document.querySelector('.background-pattern');
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset;
-        const speed = 0.1;
-        backgroundPattern.style.transform = `translateY(${scrollTop * speed}px)`;
-    });
+    if (backgroundPattern) {
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset;
+            const speed = 0.1;
+            backgroundPattern.style.transform = `translateY(${scrollTop * speed}px)`;
+        });
+    }
 
 });
