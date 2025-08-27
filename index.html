@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
@@ -48,8 +48,10 @@
         </div>
     </nav>
 
-    <main class="container">
-        <section class="hero-section">
+    <div class="background-pattern"></div>
+
+    <main class="container content-grid">
+        <section class="hero-section glass-card reveal-on-scroll">
             <div class="hero-content">
                 <h1 class="animated-heading" data-text="Introduction"></h1>
                 <p class="medium-font">
@@ -61,26 +63,32 @@
             </a>
         </section>
 
-        <article id="introduction" class="content-section reveal-on-scroll">
+        <article id="introduction" class="content-section glass-card reveal-on-scroll">
             <img src="/images/man-7628305.jpg" alt="An illustration of a man looking out over a landscape" class="content-image">
-            <p class="small-font">
-                His connection to this place underscores a truth that applies to all of us: the environment we grow up in—its challenges, its beauty, and its traditions—fundamentally shapes our character, resilience, and the quiet strength we carry into the world. Our roots are the invisible foundation upon which we build our lives.
-            </p>
+            <div class="card-text">
+                <p class="small-font">
+                    His connection to this place underscores a truth that applies to all of us: the environment we grow up in—its challenges, its beauty, and its traditions—fundamentally shapes our character, resilience, and the quiet strength we carry into the world. Our roots are the invisible foundation upon which we build our lives.
+                </p>
+            </div>
         </article>
 
-        <article id="purpose" class="content-section reveal-on-scroll">
-            <h2 class="animated-heading" data-text="Purpose"></h2>
-            <p class="medium-font">
-                This website exists to share knowledge generously and to gain wisdom openly, recognizing that our collective growth is rooted in both giving and learning.
-            </p>
+        <article id="purpose" class="content-section glass-card reveal-on-scroll">
             <img src="/images/sunset-7133867.jpg" alt="A beautiful sunset over a beach in Rajasthan" class="content-image">
+             <div class="card-text">
+                <h2 class="animated-heading" data-text="Purpose"></h2>
+                <p class="medium-font">
+                    This website exists to share knowledge generously and to gain wisdom openly, recognizing that our collective growth is rooted in both giving and learning.
+                </p>
+            </div>
         </article>
 
-        <section id="contact" class="content-section reveal-on-scroll">
-            <h2 class="animated-heading" data-text="Contact me"></h2>
-            <div class="contact-box">
-                <i class="ph ph-envelope-simple"></i>
-                <a href="mailto:admin@ajayyadav.me">admin@ajayyadav.me</a>
+        <section id="contact" class="content-section glass-card reveal-on-scroll">
+            <div class="card-text">
+                <h2 class="animated-heading" data-text="Contact me"></h2>
+                <div class="contact-box">
+                    <i class="ph ph-envelope-simple"></i>
+                    <a href="mailto:admin@ajayyadav.me">admin@ajayyadav.me</a>
+                </div>
             </div>
         </section>
     </main>
