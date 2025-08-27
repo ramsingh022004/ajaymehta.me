@@ -1,11 +1,30 @@
 /* --- Styles specifically for the Contact Us page --- */
 
+/* --- DEFINITIVE FIX for Header Visibility --- */
+/* This rule forces the header elements to be white on this page */
+.contact-page-body .main-header .site-name,
+.contact-page-body .main-header .logo,
+.contact-page-body .main-header .line {
+    color: #ffffff;
+    background-color: #ffffff; /* This only affects the menu lines */
+}
+
+/* On scroll, the header text needs to change back to the theme color */
+.contact-page-body .header-scrolled .site-name,
+.contact-page-body .header-scrolled .logo,
+.contact-page-body .header-scrolled .line {
+    color: var(--heading-color);
+    background-color: var(--heading-color);
+}
+.contact-page-body .header-scrolled .logo {
+    color: var(--primary-color);
+}
+
+
 .contact-page-body {
     background-color: #0c0c0d; /* Dark base for the images to pop */
     color: #ffffff;
 }
-/* All header styles are now handled by the .header-on-dark class in main.css */
-
 
 /* --- Multi-layer Parallax Background --- */
 .background-layers {
