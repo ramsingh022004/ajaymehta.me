@@ -4,6 +4,8 @@
     background-color: #0c0c0d; /* Dark base for the images to pop */
     color: #ffffff;
 }
+/* All header styles are now handled by the .header-on-dark class in main.css */
+
 
 /* --- Multi-layer Parallax Background --- */
 .background-layers {
