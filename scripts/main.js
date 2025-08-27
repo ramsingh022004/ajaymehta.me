@@ -19,21 +19,16 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     menuBtn.addEventListener('click', () => {
-        // This single button now toggles the menu
         if (menuDrawer.classList.contains('open')) {
             closeDrawer();
         } else {
             openDrawer();
         }
     });
-
-    // The explicit close button inside the drawer
-    closeBtn.addEventListener('click', closeDrawer);
     
-    // The overlay for closing the menu
+    closeBtn.addEventListener('click', closeDrawer);
     drawerOverlay.addEventListener('click', closeDrawer);
     
-    // Close drawer with the Escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && menuDrawer.classList.contains('open')) {
             closeDrawer();
@@ -109,6 +104,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.reveal-on-scroll, .animated-heading').forEach(el => {
         observer.observe(el);
+    });
+
+    // --- NEW: Parallax Effect for Background Pattern ---
+    const backgroundPattern = document.querySelector('.background-pattern');
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset;
+        const speed = 0.1;
+        backgroundPattern.style.transform = `translateY(${scrollTop * speed}px)`;
     });
 
 });
