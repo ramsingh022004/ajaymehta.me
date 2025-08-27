@@ -1,0 +1,185 @@
+/* --- Styles specifically for the Contact Us page --- */
+
+.contact-page-body {
+    background-color: #0c0c0d; /* A very dark base for the images to pop */
+    color: #ffffff;
+}
+
+/* Make the shared header transparent with a light text color */
+.main-header {
+    background-color: transparent;
+    box-shadow: none;
+}
+.contact-page-body .site-name,
+.contact-page-body .menu-btn .line {
+    color: #ffffff;
+    background-color: #ffffff;
+}
+[data-theme="dark"] .contact-page-body .site-name {
+    color: #ffffff; /* Ensure it stays white in dark mode */
+}
+
+
+/* --- NEW: Multi-layer Parallax Background --- */
+.background-layers {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+.bg-image-base, .bg-image-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease-out;
+}
+.bg-image-base {
+    /* The Kanyakumari image */
+    transform: scale(1.1);
+}
+.bg-image-overlay {
+    /* The Indian flag image */
+    opacity: 0.15;
+    mix-blend-mode: screen; /* Blends the flag colors with the scene below */
+}
+.background-layers::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle, transparent 50%, rgba(12, 12, 13, 0.8) 100%);
+}
+
+
+/* Main content container */
+.contact-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8rem 1.5rem 4rem;
+    text-align: center;
+}
+
+.contact-hero {
+    margin-bottom: 4rem;
+}
+.contact-hero h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 2px 15px rgba(0,0,0,0.5);
+}
+.contact-hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-top: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* --- NEW: Dense 3-Card Grid --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.grid-card {
+    background-color: var(--drawer-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 2rem;
+    color: var(--text-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.grid-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.grid-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+.grid-card h2 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    margin-bottom: 0.75rem;
+}
+.grid-card p {
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+.email-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+}
+.email-button:hover {
+    background-color: var(--accent-color);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.social-links a {
+    font-size: 2rem;
+    color: var(--text-color);
+    transition: color 0.3s, transform 0.3s;
+}
+.social-links a:hover {
+    color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+/* Shared active page link style */
+.menu-drawer a.active-page {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Fade-in animations */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.grid-card:nth-child(2) { transition-delay: 0.2s; }
+.grid-card:nth-child(3) { transition-delay: 0.4s; }
+
+/* Desktop Layout */
+@media (min-width: 769px) {
+    .contact-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+@media (max-width: 600px) {
+    .contact-hero h1 {
+        font-size: 2.5rem;
+    }
+}
