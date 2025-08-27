@@ -3,24 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About Ajay Yadav: a journey of deep observation, passion, and creativity from Rajasthan.">
+    <meta name="description" content="A personal blog by Ajay Yadav about knowledge, wisdom, and life's journey from Rajasthan.">
     <meta name="author" content="Ajay Yadav">
     
-    <title>Ajay Mehta - About Me</title>
+    <title>Ajay Mehta - Home</title>
     
-    <!-- Shared styles from your homepage -->
     <link rel="stylesheet" href="/styles/main.css">
-    <!-- New, specific styles for this page -->
-    <link rel="stylesheet" href="/styles/about.css">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,500&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
-<body class="about-page-body">
+<body>
 
-    <!-- The header and menu drawer are reused from the homepage for consistency -->
     <header class="main-header">
         <div class="container">
             <a href="/" class="logo" aria-label="Homepage">
@@ -39,7 +34,7 @@
     <nav id="menu-drawer" class="menu-drawer">
         <button id="close-btn" class="close-btn" aria-label="Close Menu">&times;</button>
         <ul>
-            <li><a href="/about.html" class="active-page"><i class="ph ph-user"></i>About Me</a></li>
+            <li><a href="/about.html"><i class="ph ph-user"></i>About Me</a></li>
             <li><a href="/motive.html"><i class="ph ph-lightbulb"></i>Motive of the Page</a></li>
             <li><a href="/contact.html"><i class="ph ph-paper-plane-tilt"></i>Contact Us</a></li>
             <li><a href="/index.html"><i class="ph ph-books"></i>Pages Index</a></li>
@@ -53,52 +48,47 @@
         </div>
     </nav>
 
-    <main class="about-container">
-        
-        <section class="about-hero reveal-on-scroll">
-            <h1 class="about-title">An Untold Story</h1>
-            <div class="image-wrapper">
-                <img src="/images/meaning-9398440_1920.png" alt="Torn paper scraps with words forming a phrase about the meaning of life.">
+    <main class="container">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="animated-heading" data-text="Introduction"></h1>
+                <p class="medium-font">
+                    <span class="highlight-name">Ajay Yadav</span> is from Mundru, a village nestled in the arid and majestic landscape of Rajasthan, a land known for its vibrant culture, harsh climate, and unwavering spirit.
+                </p>
             </div>
+            <a href="#introduction" class="scroll-down">
+                <i class="ph ph-arrow-down"></i>
+            </a>
         </section>
 
-        <section class="story-section reveal-on-scroll">
-            <div class="language-toggle">
-                <button id="lang-hindi" class="active">हिन्दी</button>
-                <span>/</span>
-                <button id="lang-english">English</button>
-            </div>
+        <article id="introduction" class="content-section reveal-on-scroll">
+            <img src="/images/man-7628305.jpg" alt="An illustration of a man looking out over a landscape" class="content-image">
+            <p class="small-font">
+                His connection to this place underscores a truth that applies to all of us: the environment we grow up in—its challenges, its beauty, and its traditions—fundamentally shapes our character, resilience, and the quiet strength we carry into the world. Our roots are the invisible foundation upon which we build our lives.
+            </p>
+        </article>
 
-            <div class="story-content">
-                <div id="story-hindi" class="story-text active">
-                    <p>हर शख़्स की अपनी एक अनकही कहानी होती है। मैं वो शख़्स हूँ जो चीज़ों को गहराई से देखता है, चुपचाप दुनिया के नज़ारों को अपने भीतर समेटता है। मेरी ज़िंदगी के कुछ पन्ने शांत और विचारों से भरे हैं, तो कुछ जुनून और रचनात्मकता के जोश से। मैं एक साधक हूँ - कभी खोजता, कभी बनाता, और हमेशा नए अर्थ तलाशता। शायद हमारी कहानियाँ कहीं एक-दूसरे से टकराएँ।</p>
-                </div>
-                <div id="story-english" class="story-text">
-                    <p>Every person has an untold story within them. I am someone who observes things deeply, quietly absorbing the world's scenes within. Some pages of my life are calm and thoughtful, while others are filled with the fervor of passion and creativity. I am a seeker—sometimes searching, sometimes creating, and always looking for new meaning. Perhaps our stories will intersect somewhere.</p>
-                </div>
+        <article id="purpose" class="content-section reveal-on-scroll">
+            <h2 class="animated-heading" data-text="Purpose"></h2>
+            <p class="medium-font">
+                This website exists to share knowledge generously and to gain wisdom openly, recognizing that our collective growth is rooted in both giving and learning.
+            </p>
+            <img src="/images/sunset-7133867.jpg" alt="A beautiful sunset over a beach in Rajasthan" class="content-image">
+        </article>
+
+        <section id="contact" class="content-section reveal-on-scroll">
+            <h2 class="animated-heading" data-text="Contact me"></h2>
+            <div class="contact-box">
+                <i class="ph ph-envelope-simple"></i>
+                <a href="mailto:admin@ajayyadav.me">admin@ajayyadav.me</a>
             </div>
         </section>
-        
-        <section class="image-section reveal-on-scroll">
-            <div class="image-wrapper">
-                <img src="/images/notepad-1558811_1920.jpg" alt="A blank notepad and pencil on a wooden desk, symbolizing creation.">
-            </div>
-        </section>
-
-        <section class="contact-section reveal-on-scroll">
-            <div class="contact-card">
-                <span class="name">Ajay Yadav</span>
-                <a href="mailto:admin@ajaymehta.me" class="email">admin@ajaymehta.me</a>
-            </div>
-        </section>
-
     </main>
-    
+
     <footer class="main-footer">
         <p>&copy; 2025 Ajay Mehta. All rights reserved.</p>
     </footer>
 
-    <script src="/scripts/main.js"></script> 
-    <script src="/scripts/about.js"></script> 
+    <script src="/scripts/main.js"></script>
 </body>
 </html>
