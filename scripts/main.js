@@ -35,20 +35,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Dark Mode Toggle Functionality ---
+    // --- Dark Mode Toggle Functionality (UPDATED) ---
     const darkModeSwitch = document.getElementById('dark-mode-switch');
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-
+    
+    // Check only for a previously saved theme in localStorage
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme) {
         document.documentElement.setAttribute('data-theme', currentTheme);
         if (currentTheme === 'dark') {
             darkModeSwitch.checked = true;
         }
-    } else if (prefersDarkScheme.matches) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        darkModeSwitch.checked = true;
-    }
+    } // The "else if" block that checks system preference has been removed.
 
     darkModeSwitch.addEventListener('change', function(e) {
         if (e.target.checked) {
@@ -106,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // --- NEW: Parallax Effect for Background Pattern ---
+    // --- Parallax Effect for Background Pattern ---
     const backgroundPattern = document.querySelector('.background-pattern');
     window.addEventListener('scroll', () => {
         const scrollTop = window.pageYOffset;
