@@ -2,10 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Menu Drawer Functionality ---
     const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-btn'); // Re-added the close button selector
     const menuDrawer = document.getElementById('menu-drawer');
     const drawerOverlay = document.getElementById('drawer-overlay');
-    
-    // The explicit close button is not in this page's HTML, so we don't select it.
 
     const openDrawer = () => {
         menuDrawer.classList.add('open');
@@ -19,14 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
         menuBtn.setAttribute('aria-expanded', 'false');
     };
 
+    // Main menu button toggles the drawer
     menuBtn.addEventListener('click', () => {
-        // This single button now toggles the menu
         if (menuDrawer.classList.contains('open')) {
             closeDrawer();
         } else {
             openDrawer();
         }
     });
+    
+    // The explicit close button inside the drawer now works again
+    closeBtn.addEventListener('click', closeDrawer); 
     
     // The overlay for closing the menu
     drawerOverlay.addEventListener('click', closeDrawer);
