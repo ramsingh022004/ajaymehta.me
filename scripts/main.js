@@ -1,23 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- NEW: Header Scroll Effect ---
-    const header = document.querySelector('.main-header');
-    if (header) {
-        const scrollThreshold = 20; // How many pixels to scroll before header becomes solid
-
-        const handleHeaderScroll = () => {
-            if (window.scrollY > scrollThreshold) {
-                header.classList.add('header-scrolled');
-            } else {
-                header.classList.remove('header-scrolled');
-            }
-        };
-        
-        window.addEventListener('scroll', handleHeaderScroll);
-        // Run on page load as well in case the page is reloaded halfway down
-        handleHeaderScroll(); 
-    }
-
     // --- Menu Drawer Functionality ---
     const menuBtn = document.getElementById('menu-btn');
     const closeBtn = document.getElementById('close-btn');
@@ -120,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // --- Parallax Effect for Background Pattern ---
+    // --- NEW: Parallax Effect for Background Pattern ---
     const backgroundPattern = document.querySelector('.background-pattern');
     if (backgroundPattern) {
         window.addEventListener('scroll', () => {
