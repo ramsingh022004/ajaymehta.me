@@ -10,10 +10,13 @@
     background-color: transparent;
     box-shadow: none;
 }
-.contact-page-body .site-name,
+.contact-page-body .logo,
+.contact-page-body .site-name {
+    color: #ffffff; /* Sets the icon and text color to white */
+}
+
 .contact-page-body .menu-btn .line {
-    color: #ffffff;
-    background-color: #ffffff;
+    background-color: #ffffff; /* Sets only the menu lines' background to white */
 }
 [data-theme="dark"] .contact-page-body .site-name {
     color: #ffffff; /* Ensure it stays white in dark mode */
