@@ -45,7 +45,7 @@ body {
     overflow-x: hidden;
 }
 
-/* --- NEW: Decorative Background Pattern --- */
+/* --- Decorative Background Pattern --- */
 .background-pattern {
     position: fixed;
     top: 0;
@@ -66,17 +66,26 @@ body {
     padding: 0 1.5rem;
 }
 
-/* --- Header & Navigation --- */
+/* --- NEW: Header Styling (Transparent by Default) --- */
 .main-header {
     position: fixed;
     top: 0; left: 0;
     width: 100%;
     z-index: 100;
+    transition: background-color 0.3s, box-shadow 0.3s, border-bottom 0.3s;
+    border-bottom: 1px solid transparent; /* Start with transparent border */
+}
+
+/* NEW: This class is added on scroll */
+.header-scrolled {
     background-color: var(--drawer-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 10px var(--shadow-color);
 }
+
+
 .main-header .container {
     display: flex;
     justify-content: space-between;
@@ -172,9 +181,9 @@ body {
 input:checked + .slider { background-color: var(--primary-color); }
 input:checked + .slider:before { transform: translateX(22px); }
 
-/* --- NEW: Main Content Grid Layout --- */
+/* --- Homepage Grid Layout --- */
 .content-grid {
-    padding-top: 120px; /* Space for fixed header */
+    padding-top: 100px; /* Space for fixed header */
     padding-bottom: 4rem;
     display: grid;
     grid-template-columns: 1fr;
@@ -191,19 +200,12 @@ input:checked + .slider:before { transform: translateX(22px); }
     box-shadow: 0 8px 32px var(--shadow-color);
     text-align: center;
 }
-
-.card-text {
-    padding: 1rem 0;
-}
-
+.card-text { padding: 1rem 0; }
 .hero-section {
     min-height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding: 3rem;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    position: relative; padding: 3rem;
 }
 .animated-heading {
     font-family: var(--font-heading);
@@ -226,24 +228,16 @@ input:checked + .slider:before { transform: translateX(22px); }
     font-family: var(--font-body);
     color: var(--primary-color);
     background-color: var(--highlight-bg);
-    padding: 0.2rem 0.6rem;
-    border-radius: 6px;
+    padding: 0.2rem 0.6rem; border-radius: 6px;
 }
 .small-font {
     font-size: 1rem; max-width: 550px; margin: 0 auto;
 }
-.contact-box {
-    margin-top: 1rem;
-}
+.contact-box { margin-top: 1rem; }
 .contact-box a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    font-family: var(--font-body);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
+    color: var(--primary-color); text-decoration: none;
+    font-weight: 600; font-size: 1.1rem; font-family: var(--font-body);
+    display: inline-flex; align-items: center; gap: 0.5rem;
 }
 .scroll-down {
     position: absolute; bottom: 2rem;
@@ -271,37 +265,20 @@ input:checked + .slider:before { transform: translateX(22px); }
     font-size: 0.9rem;
 }
 
-/* --- NEW: Desktop Layout (Proper Spacing) --- */
+/* --- Desktop Layout (Homepage) --- */
 @media (min-width: 1024px) {
     .content-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 2.5rem;
+        padding-top: 120px;
     }
-    .hero-section {
-        grid-column: span 2;
-        min-height: 60vh;
-    }
-    .content-section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    #purpose {
-        /* Make purpose and contact stack on the right */
-        grid-column: 2 / 3;
-        grid-row: 2 / 3;
-    }
-    #introduction {
-        grid-column: 1 / 2;
-        grid-row: 2 / 4; /* Span two rows */
-    }
-    #contact {
-        grid-column: 2 / 3;
-        grid-row: 3 / 4;
-    }
+    .hero-section { grid-column: span 2; min-height: 60vh; }
+    .content-section { display: flex; flex-direction: column; justify-content: center; }
+    #purpose { grid-column: 2 / 3; grid-row: 2 / 3; }
+    #introduction { grid-column: 1 / 2; grid-row: 2 / 4; }
+    #contact { grid-column: 2 / 3; grid-row: 3 / 4; }
     .animated-heading { font-size: 3.5rem; min-height: 5.5rem; }
 }
-
 @media (max-width: 600px) {
     .animated-heading { font-size: 2.5rem; min-height: 4rem; }
     .menu-drawer { width: 280px; }
