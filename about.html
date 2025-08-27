@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Ajay Yadav: a journey of deep observation, passion, and creativity from Rajasthan.">
+    <meta name="author" content="Ajay Yadav">
+    
+    <title>Ajay Mehta - About Me</title>
+    
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/about.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="about-page-body">
+
+    <header class="main-header">
+        <div class="container">
+            <a href="/" class="logo" aria-label="Homepage">
+                <i class="ph-bold ph-fleur-de-lis"></i>
+                <span class="site-name">Ajay Mehta</span>
+            </a>
+            <button id="menu-btn" class="menu-btn" aria-label="Open Menu" aria-haspopup="true" aria-expanded="false" aria-controls="menu-drawer">
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+            </button>
+        </div>
+    </header>
+
+    <div id="drawer-overlay" class="drawer-overlay"></div>
+    <nav id="menu-drawer" class="menu-drawer">
+        <button id="close-btn" class="close-btn" aria-label="Close Menu">&times;</button>
+        <ul>
+            <li><a href="/about.html" class="active-page"><i class="ph ph-user"></i>About Me</a></li>
+            <li><a href="/motive.html"><i class="ph ph-lightbulb"></i>Motive of the Page</a></li>
+            <li><a href="/contact.html"><i class="ph ph-paper-plane-tilt"></i>Contact Us</a></li>
+            <li><a href="/index.html"><i class="ph ph-books"></i>Pages Index</a></li>
+        </ul>
+        <div class="dark-mode-toggle">
+            <label for="dark-mode-switch">Dark Mode</label>
+            <label class="switch">
+                <input type="checkbox" id="dark-mode-switch">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </nav>
+
+    <main class="about-main-content">
+        <div class="split-layout">
+            
+            <div class="split-image-side">
+                <div class="image-wrapper">
+                    <img src="/images/seeker-in-rajasthan.jpg" alt="A symbolic representation of a seeker in a vast Rajasthani landscape">
+                </div>
+            </div>
+
+            <div class="split-text-side">
+                <div class="text-content-wrapper">
+                    <h1 class="about-title reveal-on-scroll">An Untold Story</h1>
+                    
+                    <div class="language-toggle reveal-on-scroll">
+                        <button id="lang-hindi" class="active">हिन्दी</button>
+                        <span>/</span>
+                        <button id="lang-english">English</button>
+                    </div>
+
+                    <div class="story-content reveal-on-scroll">
+                        <div id="story-hindi" class="story-text active">
+                            <p>हर शख़्स की अपनी एक अनकही कहानी होती है। मैं वो शख़्स हूँ जो चीज़ों को गहराई से देखता है, चुपचाप दुनिया के नज़ारों को अपने भीतर समेटता है। मेरी ज़िंदगी के कुछ पन्ने शांत और विचारों से भरे हैं, तो कुछ जुनून और रचनात्मकता के जोश से। मैं एक साधक हूँ - कभी खोजता, कभी बनाता, और हमेशा नए अर्थ तलाशता। शायद हमारी कहानियाँ कहीं एक-दूसरे से टकराएँ।</p>
+                        </div>
+                        <div id="story-english" class="story-text">
+                            <p>Every person has an untold story within them. I am someone who observes things deeply, quietly absorbing the world's scenes within. Some pages of my life are calm and thoughtful, while others are filled with the fervor of passion and creativity. I am a seeker—sometimes searching, sometimes creating, and always looking for new meaning. Perhaps our stories will intersect somewhere.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card reveal-on-scroll">
+                        <span class="name">Ajay Yadav</span>
+                        <a href="mailto:admin@ajaymehta.me" class="email">admin@ajaymehta.me</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    
+    <script src="/scripts/main.js"></script> 
+    <script src="/scripts/about.js"></script> 
+</body>
+</html>
