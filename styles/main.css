@@ -113,14 +113,13 @@ body {
     transition: color 0.3s;
 }
 
-/* --- NEW: Specific, high-priority override for pages with dark backgrounds --- */
+/* --- CORRECTED RULE for pages with dark backgrounds --- */
 .header-on-dark .site-name,
-.header-on-dark .line {
-    color: #ffffff !important;
-    background-color: #ffffff !important;
-}
 .header-on-dark .logo {
-    color: #ffffff !important;
+    color: #ffffff; /* Forces the text and icon to be white */
+}
+.header-on-dark .line {
+    background-color: #ffffff; /* Forces the menu lines to be white */
 }
 
 
