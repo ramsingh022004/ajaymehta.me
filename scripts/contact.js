@@ -1,25 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Header Scroll Effect ---
-    const header = document.querySelector('.main-header');
-    if (header) {
-        const scrollThreshold = 20;
-        const handleHeaderScroll = () => {
-            if (window.scrollY > scrollThreshold) {
-                header.classList.add('header-scrolled');
-            } else {
-                header.classList.remove('header-scrolled');
-            }
-        };
-        window.addEventListener('scroll', handleHeaderScroll);
-        handleHeaderScroll(); 
-    }
-
     // --- Menu Drawer Functionality ---
     const menuBtn = document.getElementById('menu-btn');
-    const closeBtn = document.getElementById('close-btn');
     const menuDrawer = document.getElementById('menu-drawer');
     const drawerOverlay = document.getElementById('drawer-overlay');
+    
+    // The explicit close button is not in this page's HTML, so we don't select it.
 
     const openDrawer = () => {
         menuDrawer.classList.add('open');
@@ -34,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     menuBtn.addEventListener('click', () => {
+        // This single button now toggles the menu
         if (menuDrawer.classList.contains('open')) {
             closeDrawer();
         } else {
@@ -41,9 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    closeBtn.addEventListener('click', closeDrawer);
+    // The overlay for closing the menu
     drawerOverlay.addEventListener('click', closeDrawer);
     
+    // Close drawer with the Escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && menuDrawer.classList.contains('open')) {
             closeDrawer();
@@ -69,6 +57,21 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('theme', 'light');
         }
     });
+    
+    // --- Header Scroll Effect ---
+    const header = document.querySelector('.main-header');
+    if (header) {
+        const scrollThreshold = 20;
+        const handleHeaderScroll = () => {
+            if (window.scrollY > scrollThreshold) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        };
+        window.addEventListener('scroll', handleHeaderScroll);
+        handleHeaderScroll(); 
+    }
     
     // --- Multi-layer Parallax Effect ---
     const baseImage = document.querySelector('.bg-image-base');
