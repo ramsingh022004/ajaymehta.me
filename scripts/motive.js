@@ -26,7 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    closeBtn.addEventListener('click', closeDrawer);
+    if(closeBtn) {
+        closeBtn.addEventListener('click', closeDrawer);
+    }
     drawerOverlay.addEventListener('click', closeDrawer);
     
     document.addEventListener('keydown', (e) => {
@@ -35,39 +37,30 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Dark Mode is not used on this page, but we keep the logic for consistency ---
+    // --- Dark Mode Toggle Functionality ---
     const darkModeSwitch = document.getElementById('dark-mode-switch');
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme) {
-        // We don't apply a data-theme to the body, as this page has its own dark style
+        document.documentElement.setAttribute('data-theme', currentTheme);
         if (currentTheme === 'dark') {
             darkModeSwitch.checked = true;
         }
+    } else {
+        // Default to light theme if nothing is saved
+        document.documentElement.setAttribute('data-theme', 'light');
     }
 
     darkModeSwitch.addEventListener('change', function(e) {
-        // This will set the theme for OTHER pages when toggled here
         if (e.target.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
             localStorage.setItem('theme', 'dark');
         } else {
+            document.documentElement.setAttribute('data-theme', 'light');
             localStorage.setItem('theme', 'light');
         }
     });
     
-    // --- Header Scroll Effect ---
-    const header = document.querySelector('.main-header');
-    if (header) {
-        const scrollThreshold = 20;
-        const handleHeaderScroll = () => {
-            if (window.scrollY > scrollThreshold) {
-                header.classList.add('header-scrolled');
-            } else {
-                header.classList.remove('header-scrolled');
-            }
-        };
-        window.addEventListener('scroll', handleHeaderScroll);
-        handleHeaderScroll(); 
-    }
+    // --- Header Scroll Effect is not needed on this page due to solid header ---
 
     // --- Intersection Observer for Fade-in Animations ---
     const observerOptions = {
